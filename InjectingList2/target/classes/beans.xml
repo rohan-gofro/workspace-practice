@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+                
+ <bean id = "author1" class = "Author">
+ <property name="name" value="Rohan"></property>
+ <property name="email" value="rohan@email.com"></property>
+ </bean>
+ 
+ <bean id = "author2" class = "Author">
+ <property name="name" value="User1"></property>
+ <property name="email" value="User1@email.com"></property>
+ </bean>
+ 
+ <bean id = "sol1" class="Solutions">
+ <property name="sid" value="1"></property>
+ <property name="solution" value="solution 1 is here"></property>
+ <property name="author" ref="author1"></property>
+ </bean>
+ 
+<bean id = "sol2" class="Solutions">
+ <property name="sid" value="2"></property>
+ <property name="solution" value="solution 2 is here"></property>
+ <property name="author" ref="author1"></property>
+ </bean>
+ 
+ <bean id = "sol3" class="Solutions">
+ <property name="sid" value="3"></property>
+ <property name="solution" value="solution 3 is here"></property>
+ <property name="author" ref="author2"></property>
+ </bean>
+ 
+ <bean id = "query" class="Query">
+ <property name="qid" value="1"></property>
+ <property name="query" value="query 1 is here. Need solution or query 1"></property>
+ <property name="user" value = "User1"></property>
+ <property name="solutions">
+ <list>
+ <ref bean = "sol1"/>
+ <ref bean = "sol2"/>
+ <ref bean = "sol3"/>
+ </list>
+ </property>
+ </bean>
+
+
+</beans>

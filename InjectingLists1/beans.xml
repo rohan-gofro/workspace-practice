@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+                
+ <bean id = "ans1" class = "String">
+ <constructor-arg value = "answer 1"></constructor-arg>
+ </bean>
+ 
+ <bean id = "ans2" class = "String">
+ <constructor-arg value = "answer 2"></constructor-arg>
+ </bean>
+ 
+ <bean id = "ans3" class = "String">
+ <constructor-arg value = "answer 3"></constructor-arg>
+ </bean>
+ 
+ <bean id = "ques" class = "Questions">
+    <property name="qid" value="1"></property>
+    <property name="name" value="What is java ?"></property>
+    <property name="answers">
+    <list>
+    <ref bean =  "ans1"/>
+    <ref bean =  "ans2"/>
+    <ref bean =  "ans3"/>
+    </list>
+    </property>
+ </bean>
+
+
+</beans>
