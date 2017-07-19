@@ -1,12 +1,19 @@
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-//@ContextConfiguration(locations = { "classpath:spring/testApplicationContext.xml", "classpath:spring/datasource-beans.xml" })
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath:beans/beans.xml")
 public class RunStudent {
 
-	public static void main(String[] args) {
+	@Autowired
+	private ApplicationContext context;
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+	@Test
+	public void runStudent() {
 		Student obj = (Student) context.getBean("studentbean");
 		obj.dispdata();
 
