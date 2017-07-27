@@ -27,5 +27,4 @@ public class FormController {
 	public String requestMap() {
 		return "redirect:addstudent";
 	}
-
 }
