@@ -9,7 +9,8 @@ import java.util.Date;
 @Service
 
 @EnableScheduling
-public class Annotation {
+public class Annotation 
+{
  @Scheduled(fixedDelay = 5000)
  public void fixedDelayTask() {
  System.out.println(new Date() + " This runs in a fixed delay");
